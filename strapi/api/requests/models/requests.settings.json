@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "requests",
+  "info": {
+    "name": "Requests",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "route": {
+      "type": "string"
+    },
+    "ipClient": {
+      "type": "string"
+    },
+    "requestBody": {
+      "type": "json"
+    },
+    "headers": {
+      "type": "json"
+    },
+    "body": {
+      "type": "json"
+    },
+    "responseTime": {
+      "type": "integer"
+    },
+    "query": {
+      "type": "json"
+    },
+    "response": {
+      "type": "json"
+    }
+  }
+}

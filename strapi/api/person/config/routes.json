@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/people/:document/health",
+      "handler": "person.healthByDocument",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

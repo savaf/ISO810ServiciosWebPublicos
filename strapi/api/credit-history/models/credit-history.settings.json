@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "credit_histories",
+  "info": {
+    "name": "Credit history",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "debtor": {
+      "model": "person",
+      "via": "debtor_histories"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "owed",
+        "legal",
+        "pending",
+        "cancel"
+      ]
+    },
+    "creditor": {
+      "model": "person",
+      "via": "creditor_histories"
+    },
+    "concept": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_time": {
+      "type": "date"
+    },
+    "total_money_owed": {
+      "type": "decimal"
+    },
+    "exchange_rate": {
+      "model": "exchange-rates"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "name": "Person",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "document": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "is_company": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "debtor_histories": {
+      "via": "debtor",
+      "collection": "credit-history"
+    },
+    "creditor_histories": {
+      "via": "creditor",
+      "collection": "credit-history"
+    }
+  }
+}

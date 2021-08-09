@@ -1,0 +1,255 @@
+{
+  "paths": {
+    "/people/{document}/health": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "document",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Person": {
+        "required": [
+          "id",
+          "document",
+          "name",
+          "is_company"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "document": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "is_company": {
+            "type": "boolean",
+            "default": false
+          },
+          "debtor_histories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "debtor": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "paid",
+                    "owed",
+                    "legal",
+                    "pending",
+                    "cancel"
+                  ]
+                },
+                "creditor": {
+                  "type": "string"
+                },
+                "concept": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_time": {
+                  "type": "string"
+                },
+                "total_money_owed": {
+                  "type": "number"
+                },
+                "exchange_rate": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "creditor_histories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "debtor": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "paid",
+                    "owed",
+                    "legal",
+                    "pending",
+                    "cancel"
+                  ]
+                },
+                "creditor": {
+                  "type": "string"
+                },
+                "concept": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_time": {
+                  "type": "string"
+                },
+                "total_money_owed": {
+                  "type": "number"
+                },
+                "exchange_rate": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewPerson": {
+        "required": [
+          "document",
+          "name",
+          "is_company"
+        ],
+        "properties": {
+          "document": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "is_company": {
+            "type": "boolean",
+            "default": false
+          },
+          "debtor_histories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "creditor_histories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Person"
+    }
+  ]
+}

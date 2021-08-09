@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/inflation-indices/period/:period",
+      "handler": "inflation-index.findOneByPeriod",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

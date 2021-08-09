@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inflation_indices",
+  "info": {
+    "name": "Inflation Index",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "index": {
+      "type": "float"
+    }
+  }
+}

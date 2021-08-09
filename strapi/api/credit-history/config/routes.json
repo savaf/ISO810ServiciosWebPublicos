@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/credit-histories",
+      "handler": "credit-history.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/credit-histories/count",
+      "handler": "credit-history.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/credit-histories/:id",
+      "handler": "credit-history.findOne",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

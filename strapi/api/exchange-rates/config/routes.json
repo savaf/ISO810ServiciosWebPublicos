@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/exchange-rates/rates_by/:code",
+      "handler": "exchange-rates.getRatesByCode",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
