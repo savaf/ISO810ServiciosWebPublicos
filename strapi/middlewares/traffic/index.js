@@ -4,7 +4,6 @@ module.exports = strapi => {
   return {
     initialize() {
       strapi.app.use(async ({ request, response }, next) => {
-        console.log(request.path)
         const start = Date.now();
         await next();
         if (
